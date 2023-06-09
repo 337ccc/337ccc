@@ -1,4 +1,4 @@
-### Hello, I'm Minyoung Lee 🤗🤗🤗
+## Hello, I'm Minyoung Lee 🤗🤗🤗
 ### Thank you for coming 🌊🌊🌊  
 
 
