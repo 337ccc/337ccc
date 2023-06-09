@@ -1,5 +1,3 @@
-<a href="https://hits.seeyoufarm.com"><img style="width:200px" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2F337ccc&count_bg=%2380D68E&title_bg=%2380D68E&icon=github.svg&icon_color=%23FFFFFF&title=Today&edge_flat=false"/></a>
-
 <a href="https://hits.seeyoufarm.com"><img style="width:200px" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2F337ccc&count_bg=%23000000&title_bg=%23000000&icon=github.svg&icon_color=%23FFFFFF&title=Today&edge_flat=false"/></a>
 
 ### Hello, visitors👋
@@ -10,6 +8,8 @@
 
 <!--
 **337ccc/337ccc** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+
+<a href="https://hits.seeyoufarm.com"><img style="width:200px" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2F337ccc&count_bg=%2380D68E&title_bg=%2380D68E&icon=github.svg&icon_color=%23FFFFFF&title=Today&edge_flat=false"/></a>
 
 Here are some ideas to get you started:
 
