@@ -1,4 +1,6 @@
-## Hello, I'm Minyoung Lee 🤗🤗🤗  Thank you for coming 🌊🌊🌊  
+## Hello, I'm Minyoung Lee 🤗🤗🤗
+<br/>
+Thank you for coming 🌊🌊🌊  
 
 
 ### What I studied 📓
