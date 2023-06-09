@@ -1,5 +1,5 @@
-### Hello, I'm Minyoung Lee 🤗🤗🤗
-### Thank you for coming 🌊🌊🌊 
+### Hello, I'm Minyoung Lee 🌊🌊🌊
+### Thank you for coming:-)
 <br/>
 
 ### What I studied 📓
