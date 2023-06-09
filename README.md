@@ -2,7 +2,7 @@
 ### Thank you for coming :-)
 <br/>
 
-<img src="http://mazassumnida.wtf/api/v2/generate_badge?boj=pengsoo13">
+<img style="display:flex;" src="http://mazassumnida.wtf/api/v2/generate_badge?boj=pengsoo13">
 
 <img src="http://mazandi.herokuapp.com/api?handle=pengsoo13&theme=warm"/>
 
