@@ -10,7 +10,7 @@
 ### What I studied 📓
 <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white"/> <img src="https://img.shields.io/badge/HTML-E34F26?style=flat-square&logo=html5&logoColor=white"/> <img src="https://img.shields.io/badge/CSS-1572B6?style=flat-square&logo=css3&logoColor=white"/> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=white"/>
 
-![Footer](https://capsule-render.vercel.app/api?type=waving&color=#a5d9ff&height=200&section=footer)
+![Footer](https://capsule-render.vercel.app/api?type=waving&color=a5d9ff&height=200&section=footer)
 
 <!--
 **337ccc/337ccc** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
