@@ -1,4 +1,6 @@
-### Hello, visitors👋 My name is Minyoung. Thank you for coming.
+### Hello, visitors👋
+### My name is Minyoung
+### Thank you for coming🌞
 
 ---
 
