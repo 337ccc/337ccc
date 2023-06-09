@@ -2,8 +2,6 @@
 ### Thank you for coming :-)
 <br/>
 
-[![Solved.ac 프로필](http://mazassumnida.wtf/api/v2/generate_badge?boj=pengsoo13)](https://solved.ac/pengsoo13)
-
 <img src="http://mazassumnida.wtf/api/v2/generate_badge?boj=pengsoo13">
 
 ### Study 📓
