@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.2.1/redux.js"></script>
+</head>
+<body>
+  <style>
+    .container{
+      border: 5px solid black;
+      padding: 10px;
+    }
+  </style>
+  <div id="red"></div>
+  <div id="blue"></div>
+  <div id="green"></div>
+  <script>
+    // reducer를 통해 state 값을 만듦
+    function reducer(state, action) {
+      console.log(state, action)
+      // state의 초기값
+      if (state === undefined) {
+        return {color: 'yellow'}
+      }
+      var newState;
+      if (action.type === 'CHANGE_COLOR') {
+        // state를 복제함
+        newState = Object.assign({}, state, {color:action.color})
+        state.color = 'red'
+      }
+      console.log(action.type, action, state, newState)
+      // return 되는 값은 새로운 state 값
+      return newState
+    }
+    // store라는 전역 변수에 저장
+    var store = Redux.createStore(
+      reducer,
+      window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    );
+
+    // store에 저장된 state의 값 가져오기
+    console.log(store.getState())
+
+    function red() {
+      var state = store.getState()
+      document.querySelector('#red').innerHTML = `
+        <div class="container" id="component_red" style="background-color: ${state.color}">
+          <h1>red</h1>
+          <input type="button" value="fire" onclick="
+            // dispatch에서 type은 무조건 있어야 함
+            // dispatch의 객체는 action이 됨
+            store.dispatch({type: 'CHANGE_COLOR', color: 'red'})
+          ">
+        </div>
+      `;
+    }
+    // state의 값이 바뀔 때마다 red 함수 호출
+    store.subscribe(red);
+    red();
+
+    function blue() {
+      var state = store.getState()
+      document.querySelector('#blue').innerHTML = `
+        <div class="container" id="component_blue" style="background-color: ${state.color}">
+          <h1>blue</h1>
+          <input type="button" value="water" onclick="
+            // dispatch에서 type은 무조건 있어야 함
+            // dispatch의 객체는 action이 됨
+            store.dispatch({type: 'CHANGE_COLOR', color: 'blue'})
+          ">
+        </div>
+      `;
+    }
+    // state의 값이 바뀔 때마다 blue 함수 호출
+    store.subscribe(blue);
+    blue();
+
+    function green() {
+      var state = store.getState()
+      document.querySelector('#green').innerHTML = `
+        <div class="container" id="component_green" style="background-color: ${state.color}">
+          <h1>green</h1>
+          <input type="button" value="grass" onclick="
+            // dispatch에서 type은 무조건 있어야 함
+            // dispatch의 객체는 action이 됨
+            store.dispatch({type: 'CHANGE_COLOR', color: 'green'})
+          ">
+        </div>
+      `;
+    }
+    // state의 값이 바뀔 때마다 green 함수 호출
+    store.subscribe(green);
+    green();
+  </script>
+</body>
+</html>
