@@ -110,6 +110,7 @@ export default function Home() {
     http://localhost:3000
     ```
   <img src="./pictures/Next.js4.png">
+
   - 굉징히 큰 용량 차이가 생김(6.4MB -> 297KB)
 
 ## 뼈대 만들기 - layout & page
