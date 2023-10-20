@@ -134,9 +134,10 @@
             mode:action.mode
           });
         } else if (action.type === 'DELETE') {
+          var newContents = [];
           var i = 0;
           while(i < state.contents.length) {
-            if (state.selected_id === state.contents[i].id) {
+            if (state.selected_id !== state.contents[i].id) {
               newContents.push(
                 state.contents[i]
               );

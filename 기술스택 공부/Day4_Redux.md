@@ -33,4 +33,7 @@ Object.assign({}, {name: 'egoing'}, {city: 'seoul'})
 - time travel
 - 원본(state)을 변경하면 안됨. 불변해야 함
 
+## 실전 Redux - CRUD 앱 만들기
+### Redux/main.html
+
 [출처 : https://opentutorials.org/course/4901]

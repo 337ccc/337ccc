@@ -117,4 +117,36 @@ export default function Home() {
 <img src="./pictures/Next.js5-1.PNG">
 <img src="./pictures/Next.js5-2.PNG">
 
+## Next.js의 도로교통 시스템 - Routing
+### 용어 정리
+사용자가 접속한 URL의 path(경로)에 따라서 콘텐츠를 응답해주는 작업을 라우팅이라고 함  
+어떤 프레임워크든 그 중심에는 반드시 라우팅이 있음
+- 예를 들어, "http://a.com/dashboard/analytics/"라는 주소가 있을 때
+- "/dashboard/analytics/" 부분을 'path'라고 하고
+- 'dashboard'와 'analytics'는 각각 'segment'라고 부름
+
+<img src="pictures/Next.js6.png">
+
+## 절차
+페이지를 만드는 방법은 다음과 같음
+1. 처음에 "/create"로 접속하면 "Not Found"가 출력됨
+2. 이를 해결하기 위해 src/app 아래 create 폴더 만듦
+3. 그리고 page.tsx 파일 생성
+```
+export default function Create() {
+  return(
+    <>
+      Create!!
+    </>
+  )
+}
+```
+4. "/create"로 다시 접속하면 정상적으로 페이지가 출력됨
+
+### 알 수 있는 것
+1. pages 아래의 폴더는 세그먼트를 의미함. /create는 pages/create 폴더를 의미함
+2. pages/create.tsx 파일이 있다면, 이 파일의 반환 값을 화면에 출력함
+3. 이 값을 상위 컴포넌트인 nextjs/layout.tsx의 children 위치에 표시됨
+4. 이때, nextjs/page.tsx는 무시됨
+
 [출처 : https://opentutorials.org/course/5098]
