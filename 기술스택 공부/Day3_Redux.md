@@ -106,13 +106,13 @@ store.dispatch({ type: 'DECREMENT' })
 - 자바 스크립트 앱을 위한 예측 가능한 상태 컨테이너
 - 예측 가능 : Redux는 애플리케이션의 복잡성을 획기적으로 낮춰 우리의 코드가 어떤 결과를 가져올 지 예측 가능하게 만듦
 - Redux는 하나의 상태를 가짐
-  - 하나의 state 안에 애플리케이션에서 필요한 데이터를 모두 욲여넣음(중앙 집중적으로 관리)
+  - 하나의 state(객체) 안에 애플리케이션에서 필요한 데이터를 모두 욲여넣음(중앙 집중적으로 관리) -> 애플리케이션의 복잡성을 낮춤
 - 외부로부터 차단시킴(삼엄하게 데이터를 수정하는 것을 차단 - 인가된 담당자만 가능)
   - 데이터를 수정하려면 디스패처, 리듀서를 통해서만 가능
   - 데이터를 가져오려면 getState를 통해서만 가능
-- 데이터를 외부에서 직접적으로 제어할 수 없으면서, 예측 가능하게 만듦
+- 데이터를 외부에서 직접적으로 제어할 수 없도록 만듦으로써, 예기치 않게 state의 값이 바뀌는 문제를 사전에 차단함 -> 예측 가능하게 만듦
 - state의 값이 바뀔 때마다 데이터를 사용하는 부품들에게 전달
-- 실행 취소와 재실행을 굉장히 쉽게 할 수 있음(각각 상태의 변화가 서로에게 영향을 주지 않기 때문)
+- 실행 취소(UNDO)와 재실행(REDO)을 굉장히 쉽게 할 수 있음(각각 상태의 변화가 서로에게 영향을 주지 않기 때문. 각각의 state 값을 생성할 때 철저히 통제할 뿐만 아니라, 데이터를 만들 때, 원본을 가지고 있는게 아니라 원본을 복제하고, 이를 수정한 데이터를 새로운 원본으로 만들고 있기 때문)
 - 디버거를 이용하면 현재뿐만 아니라 이전의 상태까지 꼼꼼하게 리코딩할 수 있어, 문제 해결을 휠씬 더 쉽게 할 수 있도록 도와줌
 - 모듈 리로딩할 수 있음 : 코드를 작성하면 우리가 만들고 있는 애플리케이션에 자동적으로 반영됨
 
@@ -125,18 +125,8 @@ store.dispatch({ type: 'DECREMENT' })
   - store를 만들 때, 리듀서를 만들어서 공급해줘야 함  
 
     ```
-    function reducer(oldState, action) {
-      if(action.type === 'create') {
-        var newContents = oldState.contents.concat();
-        var newMaxId = oldState.maxId+1;
-        newContents.push({id:newMaxId, title:action.path(?)})
-        return Object.assign({}, state, {
-          contents: newContents,
-          maxId: newContents,
-          mode: 'read',
-          selectId: newMaxId
-        });
-      };
+    function reducer(state, action) {
+      // ...
     };
     var store = Redux.createStore(reducer);
     ```
@@ -148,19 +138,27 @@ store.dispatch({ type: 'DECREMENT' })
       ///...
       document.querySelector('#app').innerHTML = `
         <h1>WEB</h1>
+        ....
       `
   }
-  ```
+  ```  
+
+- subscribe : state의 값이 바뀔 때마다, render 함수 호출되어 UI가 새롭게 갱신
   ```
   store.subscribe(render);
-  ```
+  ```  
+  
 - action
   ```
   // submit 버튼
-  <form onsubmit>
-  ///...
-  store.dispatch({type: 'create', payload: (title: 'title, desc: desc)});
-  ```
+  <form onsubmit = "
+  // ...
+  store.dispatch({type: 'create', payload: {title: 'title, desc: desc}});
+  ">
+<hr>
+
+1. getState를 통해 값을 가져오고, dispatch를 통해 값을 변경하고, subscribe를 통해 값이 변경되었을 때 구동할 함수 등록
+2. reducer를 통해 state의 값을 변경
 
 ## Redux가 좋은 가장 중요한 이유
   - Redux 도입 전  

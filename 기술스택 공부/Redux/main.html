@@ -19,7 +19,7 @@
         `;
       }
 
-      // toc = table of content
+      // TOC = Table Of Content
       function TOC() {
         var state = store.getState();
         var i = 0;
@@ -85,7 +85,7 @@
               aDesc = state.contents[i].desc;
               break;
             }
-            i = i + 1
+            i = i + 1;
           }
           document.querySelector('#content').innerHTML = `
           <article>
@@ -99,7 +99,7 @@
             <h2>Welcome</h2>
             Hello, Redux!!
           </article>
-          `
+          `;
         }
       }
 
@@ -118,43 +118,44 @@
         }
         var newState;
         if (action.type === 'SELECT') {
-          newState = Object.assign({}, state, {selected_id: action.id, mode:'read' });
+          newState = Object.assign({}, state, { selected_id: action.id, mode: 'read' });
         } else if (action.type === 'CREATE') {
           var newMaxId = state.max_id + 1;
           // 배열 복제할 때 concat 사용
           var newContents = state.contents.concat();
-          newContents.push({id:newMaxId, title:action.title, desc:action.desc});
+          newContents.push({ id: newMaxId, title: action.title, desc: action.desc });
           newState = Object.assign({}, state, {
-            max_id:newMaxId,
-            contents:newContents,
-            mode:'read'
-          })
+            max_id: newMaxId,
+            contents: newContents,
+            mode: 'read',
+          });
         } else if (action.type === 'CHANGE_MODE') {
           newState = Object.assign({}, state, {
-            mode:action.mode
+            mode: action.mode,
           });
         } else if (action.type === 'DELETE') {
           var newContents = [];
           var i = 0;
-          while(i < state.contents.length) {
+          while (i < state.contents.length) {
             if (state.selected_id !== state.contents[i].id) {
-              newContents.push(
-                state.contents[i]
-              );
+              newContents.push(state.contents[i]);
             }
             i = i + 1;
           }
           newState = Object.assign({}, state, {
-            contents:newContents,
-            mode:'welcome'
-          })
+            contents: newContents,
+            mode: 'welcome',
+          });
         }
         console.log(action, state, newState);
         return newState;
       }
+
       var store = Redux.createStore(reducer);
+      // state가 바뀌었을 때, 그 변경 내용을 반영해주는 로직
       store.subscribe(article);
       store.subscribe(TOC);
+      
       subject();
       TOC();
       control();

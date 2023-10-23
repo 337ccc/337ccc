@@ -16,19 +16,22 @@
   <script>
     // reducer를 통해 state 값을 만듦
     function reducer(state, action) {
-      console.log(state, action)
+      // console.log(state, action)
       // state의 초기값
       if (state === undefined) {
-        return {color: 'yellow'}
+        return {color: 'white'}
       }
       var newState;
       if (action.type === 'CHANGE_COLOR') {
-        // state를 복제함
+        // state가 빈 {}에 복제됨
         newState = Object.assign({}, state, {color:action.color})
+        // 원본인 state를 직접 변경하는 것이 아니라,
+        // state를 복제하고,
         state.color = 'red'
       }
       console.log(action.type, action, state, newState)
-      // return 되는 값은 새로운 state 값
+      // 그 복제한 state의 color를 red로 준 것을 return
+      // 결국 return 되는 값은 복제되고 새롭게 변경된 state
       return newState
     }
     // store라는 전역 변수에 저장
