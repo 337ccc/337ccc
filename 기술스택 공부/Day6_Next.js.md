@@ -14,8 +14,8 @@
 npx create-next-app@latest .
 ```
 - Typescript : Yes  
-ESLink : Yes  
-Tailwind CSS : Yes  
+ESLint : Yes  
+Tailwind CSS : Yes
 src/ directory : Yes  
 App Router : Yes  
 import alias : No  
