@@ -68,6 +68,8 @@ SELECT email, sign_up_day, DATE_SUB(sign_up_day, INTERVAL 250 DAY) FROM member;
 
 ### 여러 개의 조건 걸기
 
+- AND가 OR보다 우선 순위가 더 높음
+
 ```
 SELECT * FROM member
 WHERE gender = 'm'
